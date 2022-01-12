@@ -1,19 +1,17 @@
-import { Outlet, Link } from "react-router-dom";
-import { router } from "../config/router";
+import { Outlet /*, Link*/ } from "react-router-dom";
+//import { router } from "../utils/router";
+import * as React from 'react';
 
-function Layout() {
+function HeaderComponent() {
     return (
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    {router.map((route, index) => {
-                        return(<li key={index}><Link to={route.url}>{route.title}</Link></li>);
-                    })}
-                </ul>
-            </nav>
+            {/*
+            <ul>
+                {router.map((route, index) => {
+                    return (<li key={index + 1}><Link to={route.url}>{route.title}</Link></li>);
+                })}
+            </ul>
+            */}
             <Outlet />
         </div>
     );
@@ -22,4 +20,5 @@ function Layout() {
 
 
 
-export default Layout;
+export default HeaderComponent;
+

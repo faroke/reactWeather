@@ -1,12 +1,17 @@
+import WeatherDisplay from "../components/WeatherDisplay";
+import {getPosition} from "../utils/weather"
 function Home() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getPosition)
+  }
     return (
       <div>
-        <h2>Home</h2>
-        <div className="alert alert-primary" role="alert">
-          A simple primary alert—check it out!
-        </div>
+        <WeatherDisplay/>
       </div>
     );
   }
 
+
+
+  
   export default Home;
